@@ -5,6 +5,8 @@ DEFAULT_DOMAIN_NAME=$(hostname) && \
 read -p "Specify the machine hostname [$DEFAULT_DOMAIN_NAME]: " DOMAIN_NAME && \
 DOMAIN_NAME=${DOMAIN_NAME:-$DEFAULT_DOMAIN_NAME} && \
 
+echo "started oauthd on: http://$DOMAIN_NAME"
+
 docker run \
   --name oauthd \
   -d \

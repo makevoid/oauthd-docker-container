@@ -11,7 +11,10 @@ RUN cd /tmp && wget http://download.redis.io/redis-stable.tar.gz && tar xvzf red
 RUN cp /tmp/redis-stable/redis.conf /opt/redis.conf
 RUN sed -i -re"s/.*daemonize.*no/daemonize yes/g" /opt/redis.conf
 
-RUN npm install -g oauthd grunt-cli
+RUN npm install -g grunt-cli
+RUN npm install -g git://github.com/makevoid/oauthd#localbitcoins
+
+
 
 ADD ./run/bootstrap.sh /opt/bootstrap.sh
 
